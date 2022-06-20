@@ -3,7 +3,7 @@
 const { users , book } = require('../models/index');
 
  function homePage(req, res) {
-  res.status(200).send('Home Page For My Auth-API Mini Project');
+  res.status(200).send('Sing the song that only you can sing, write the book that only you can write, build the product that only you can build… live the life that only you can live');
 }
 //API 
 async function handleGetAll(req, res) {
