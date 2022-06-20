@@ -33,6 +33,16 @@ const userTable = userModel(sequelize, DataTypes);
 const orderCollection = new Collection(orderTable);
 const booksCollection = new Collection(booksTable);
 
+userTable.hasMany(orderTable, {
+    foreignKey: "userId",
+    sourceKey: "id"
+});
+
+orderTable.belongsTo(userTable, {
+    foreignKey: "userId",
+    targetKey: "id",
+});
+
 module.exports = {
     db: sequelize,
     book:booksCollection,

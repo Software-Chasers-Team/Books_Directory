@@ -1,5 +1,9 @@
 'use strict';
 const orderModel = (sequelize, DataTypes) => sequelize.define('MyOrders', {
+    userId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+    },
     title: {
         type: DataTypes.STRING,
         required: true,

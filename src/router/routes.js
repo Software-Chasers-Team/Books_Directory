@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-// const dataModules = require('../models/index');
+const dataModules = require('../models/index');
 const basicAuth = require('../auth/middlewares/basic');
 const bearerAuth = require('../auth/middlewares/bearer');
 const permissions = require('../auth/middlewares/acl');
@@ -34,23 +34,19 @@ router.param('model', (req, res, next) => {
   const modelName = req.params.model;
   if (dataModules[modelName]) {
     req.model = dataModules[modelName];
+    console.log({dataModules});
     next();
   } else {
     next('Invalid Model');
   }
 });
 
-// // V1 (Unauthenticated API) routes
-// router.get('/api/v1/:model', handleGetAll);
-// router.get('/api/v1/:model/:id', handleGetOne);
-// router.post('/api/v1/:model', handleCreate);
-// router.put('/api/v1/:model/:id', handleUpdate);
-// router.delete('/api/v1/:model/:id', handleDelete);
 
-// V2 (Authenticated API) routes
+
+//API routes
 router.get('/:model',bearerAuth, handleGetAll);
 router.get('/:model/:id',bearerAuth, handleGetOne);
-router.post('/:model',bearerAuth, permissions('create'), handleCreate);
+router.post('/:model',bearerAuth, permissions('read'), handleCreate);
 router.put('/:model/:id',bearerAuth, permissions('update'), handleUpdate);
 router.delete('/:model/:id',bearerAuth, permissions('delete'), handleDelete);
 
