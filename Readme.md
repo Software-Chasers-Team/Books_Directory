@@ -19,15 +19,15 @@ can see all the book he post in his order page , also he can update or delete ,
 
 | Page          | Path      | Method        | Response and Usage                  | who is can access this page     |   |   |   |   |   |
 |---------------|-----------|---------------|-------------------------------------|---------------------------------|---|---|---|---|---|
-| Sign up Page  | /signup   | post          | to create a user                    | any user                        |   |   |   |   |   |
-| Sign in Page  | /sign in  | post          | to login a user and receive a token | any user saved in the data base |   |   |   |   |   |
-| Users Page    | /users    | get           | to get all user names               | 	only user with "admin" role    |   |   |   |   |   |
-| book page     | /book     | get           | to get all book name                | all logged in user              |   |   |   |   |   |
-| book page     | /book     | post          | to create new book                  | admin , for web site            |   |   |   |   |   |
-| book page     | /book/:id | get one book  | to get one book by id               | any logged user                 |   |   |   |   |   |
-| book page     | /book/:id | delete        | delete book from data base          | admin                           |   |   |   |   |   |
-| order page    | /myorder  | get           | get all the order for specific user | logged in user                  |   |   |   |   |   |
-| order page    | /myorder  | post          | add book to my order                | logged in user                  |   |   |   |   |   |
+| Sign up Page  | /signup   | post          | to create a user                    | any user                        
+| Sign in Page  | /sign in  | post          | to login a user and receive a token | any user saved in the data base 
+| Users Page    | /users    | get           | to get all user names               | 	only user with "admin" role    
+| book page     | /book     | get           | to get all book name                | all logged in user              
+| book page     | /book     | post          | to create new book                  | admin , for web site            
+| book page     | /book/:id | get one book  | to get one book by id               | any logged user                 
+| book page     | /book/:id | delete        | delete book from data base          | admin                           
+| order page    | /myorder  | get           | get all the order for specific user | logged in user                  
+| order page    | /myorder  | post          | add book to my order                | logged in user                  
 
 * this is sample for our routes , and the role for each users and what he can access to a method or page .
 
